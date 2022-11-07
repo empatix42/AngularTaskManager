@@ -1,0 +1,43 @@
+<app-modal-window *ngIf="openModal"></app-modal-window>
+<div class="toolbar">
+  <h1 class="heading">{{ title | titlecase }}</h1>
+  <form>
+    <div class="form-group">
+      <input
+        type="text"
+        name="filter"
+        placeholder="🔍 Filter"
+        (input)="onUpdateFilterValue($event)"
+      />
+    </div>
+    <div class="form-group">
+      <select #sort (change)="onSelectedKey(sort.value)" name="sorting">
+        <option selected value="">Sort by</option>
+        <optgroup label="Details">
+          <option value="name">Name</option>
+          <option value="dateOfCreation">Date of creation</option>
+        </optgroup>
+        <optgroup label="Number of tasks" *ngIf="title === 'dashboard'">
+          <option value="todo">New</option>
+          <option value="inProgress">In Progress</option>
+          <option value="done">Done</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="form-group">
+      <select #order (change)="onSelectedOrder(order.value)" name="order">
+        <option selected value="">Order &#8593;&#8595;</option>
+        <option value="asc">Ascending</option>
+        <option value="desc">Descending</option>
+      </select>
+      <button
+        *ngIf="title !== 'dashboard'"
+        type="button"
+        class="btn-delete"
+        (click)="onPressDelete()"
+      >
+        Delete Board
+      </button>
+    </div>
+  </form>
+</div>

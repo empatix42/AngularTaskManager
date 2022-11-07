@@ -1,0 +1,19 @@
+<app-toolbar [title]="boardTitle!" [id]="this.id"></app-toolbar>
+<app-error-alert [errorMessage]="error" *ngIf="error"></app-error-alert>
+<div class="container">
+  <app-board-list
+    [tasks]="this.newTasks"
+    listName="Todo"
+    [board]="this.board"
+  ></app-board-list>
+  <app-board-list
+    [tasks]="this.tasksInProgress"
+    listName="In Progress"
+    [board]="this.board"
+  ></app-board-list>
+  <app-board-list
+    [tasks]="this.tasksDone"
+    listName="Done"
+    [board]="this.board"
+  ></app-board-list>
+</div>

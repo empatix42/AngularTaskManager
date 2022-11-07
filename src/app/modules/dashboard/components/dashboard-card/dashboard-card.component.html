@@ -1,0 +1,60 @@
+<app-error-alert *ngIf="error" [errorMessage]="error">
+  <button class="btn-dismiss" (click)="dismissErrorAlert()">OK</button>
+</app-error-alert>
+
+<div class="card" *ngIf="!error">
+  <form
+    [formGroup]="boardForm"
+    *ngIf="!board.name || editMode"
+    (ngSubmit)="!editMode ? onSaveBoard() : onUpdateBoard()"
+  >
+    <input
+      type="text"
+      placeholder="Enter board name"
+      formControlName="name"
+      maxlength="15"
+    />
+    <textarea
+      [readonly]="editMode ? true : false"
+      placeholder="Enter board description"
+      rows="8"
+      formControlName="description"
+      maxlength="70"
+    ></textarea>
+    <button class="btn btn-save">Save</button>
+  </form>
+  <div class="card-info" *ngIf="board.name && !editMode">
+    <img
+      class="delete-icon"
+      (click)="onDeleteBoard()"
+      src="../../../assets/icons/remove.svg"
+      alt="delete-icon"
+    />
+    <img
+      class="edit-icon"
+      (click)="onEditBoard()"
+      src="../../../assets/icons/edit.svg"
+      alt="edit-icon"
+    />
+    <h3 *ngIf="!editMode">{{ board.name }}</h3>
+    <p class="card-description">{{ board.description }}</p>
+    <p class="card-date">{{ board.dateOfCreation | date }}</p>
+  </div>
+
+  <div class="card-bottom">
+    <div class="card-nav" *ngIf="board.name && !editMode">
+      <button
+        [routerLink]="board.id ? ['/board', board.id] : null"
+        class="btn btn-navigate"
+        type="button"
+      >
+        Open board
+      </button>
+    </div>
+    <div class="tasks-info" *ngIf="board.name && !editMode">
+      <span>Todo: {{ todoAmount }}</span>
+      <span>In prog: {{ inProgressAmount }} </span>
+      <span>Done: {{ doneAmount }} </span>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,112 @@
+h2 {
+  text-align: center;
+}
+.container {
+  width: 100%;
+  margin-top: 25px;
+  padding: 30px;
+  box-shadow: 0 0 5px rgb(173, 233, 173);
+  background-color: rgb(214, 255, 214);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 25px;
+  min-height: 90px;
+}
+
+.btn-add {
+  width: 100%;
+  height: 55px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: larger;
+  background-color: rgb(176, 254, 176);
+  transition: 100ms ease-in-out;
+}
+.btn-archive {
+  background-color: white;
+  border-radius: 5px;
+  cursor: pointer;
+  height: 30px;
+  width: 100%;
+  border: none;
+}
+.btn-archive:hover {
+  background-color: rgb(241, 241, 241);
+}
+app-board-item {
+  transform: translate(0, 0);
+}
+.dragged {
+  opacity: 0.4;
+}
+.hidden {
+  display: none;
+}
+
+select {
+  padding-left: 10px;
+  width: 20vw;
+  height: 30px;
+  border-radius: 5px;
+  outline: none;
+  border: 1px solid lightgray;
+}
+
+app-board-item {
+  width: 100%;
+  border-radius: 10px;
+  background-color: rgb(176, 254, 176);
+}
+
+.green {
+  box-shadow: 0 0 5px rgb(173, 233, 173);
+  background-color: rgb(214, 255, 214);
+}
+
+.green .btn-add,
+.green app-board-item {
+  background-color: rgb(176, 254, 176);
+}
+
+.orange {
+  box-shadow: 0 0 5px rgb(233, 207, 173);
+  background-color: rgb(255, 241, 214);
+}
+
+.orange .btn-add,
+.orange app-board-item {
+  background-color: rgb(255, 223, 158);
+}
+
+.pink {
+  box-shadow: 0 0 5px rgb(203, 173, 233);
+  background-color: rgb(247, 214, 255);
+}
+
+.pink .btn-add,
+.pink app-board-item {
+  background-color: rgb(240, 186, 254);
+}
+
+.red {
+  box-shadow: 0 0 5px rgb(233, 173, 173);
+  background-color: rgb(255, 200, 200);
+}
+
+.red .btn-add,
+.red app-board-item {
+  background-color: rgb(255, 165, 165);
+}
+
+.blue {
+  box-shadow: 0 0 5px rgb(190, 200, 255);
+  background-color: rgb(197, 203, 253);
+}
+
+.blue .btn-add,
+.blue app-board-item {
+  background-color: rgb(159, 169, 253);
+}

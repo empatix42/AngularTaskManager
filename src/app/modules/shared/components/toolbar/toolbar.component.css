@@ -1,0 +1,52 @@
+.toolbar {
+  margin-top: 10px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+}
+form {
+  display: flex;
+  gap: 30px;
+}
+/* .form-group {
+  border: none;
+  display: flex;
+  flex-direction: column;
+} */
+select,
+input {
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  width: 150px;
+  height: 30px;
+}
+
+select:focus,
+input:focus {
+  outline: 0;
+}
+input {
+  width: 200px;
+  padding-left: 10px;
+}
+/* label {
+  font-size: small;
+} */
+
+.btn-delete {
+  cursor: pointer;
+  border: 1px solid lightgray;
+  border-radius: 5px;
+  height: 30px;
+  padding: 0 10px;
+  margin-left: 20px;
+  background-color: transparent;
+}
+
+.btn-delete:hover {
+  background-color: rgb(207, 58, 58);
+  color: white;
+}
+

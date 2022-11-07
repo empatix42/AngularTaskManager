@@ -1,0 +1,70 @@
+.container {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 140px;
+}
+h2 {
+  margin-bottom: 40px;
+}
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  width: 30%;
+}
+label {
+  font-weight: bold;
+}
+input {
+  margin-top: 10px;
+  cursor: pointer;
+  height: 35px;
+  border: none;
+  box-shadow: 0 0 3px gray;
+  border-radius: 5px;
+  padding-left: 10px;
+}
+input:focus {
+  outline: none;
+}
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+button {
+  cursor: pointer;
+  margin-top: 10px;
+  width: 20vw;
+  height: 35px;
+  padding: 5px;
+  border: none;
+  border-radius: 5px;
+}
+.btn-confirm {
+  background-color: rgb(184, 250, 184);
+  box-shadow: 0 0 3px rgb(43, 235, 43);
+}
+.btn-switch {
+  background-color: rgb(244, 244, 244);
+  box-shadow: 0 0 3px rgb(222, 222, 222);
+}
+.button-group {
+  display: flex;
+  gap: 30px;
+}
+.disabled {
+  background-color: rgb(221, 254, 221);
+  box-shadow: 0 0 3px rgb(221, 254, 221);
+}
+.btn-confirm:hover {
+  background-color: lightgreen;
+}
+.btn-switch:hover {
+  background-color: rgb(225, 225, 225);
+}
+.disabled:hover {
+  background-color: rgb(221, 254, 221);
+}

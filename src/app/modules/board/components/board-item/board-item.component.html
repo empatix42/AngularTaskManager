@@ -1,0 +1,47 @@
+<div class="task-item">
+  <form
+    [formGroup]="taskForm"
+    *ngIf="!task.name || editMode"
+    (ngSubmit)="!editMode ? onSaveTask() : onUpdateTask()"
+  >
+    <input type="text" formControlName="name" maxlength="20" />
+    <button class="btn-save">
+      <img
+        src="../assets/icons/done.svg"
+        alt="done-icon"
+        class="done-icon"
+        (mousedown)="(false)"
+        (mouseup)="(true)"
+      />
+    </button>
+  </form>
+
+  <p *ngIf="task.name && !editMode" class="task-text">{{ task.name }}</p>
+  <div class="task-icons" *ngIf="task.name && !editMode">
+    <img
+      class="edit-icon"
+      (click)="onEditTask()"
+      src="../../../assets/icons/edit.svg"
+      alt="edit-icon"
+      (mousedown)="(false)"
+      (mouseup)="(true)"
+    />
+    <img
+      class="delete-icon"
+      (click)="onDeleteTask()"
+      src="../../../assets/icons/remove.svg"
+      alt="delete-icon"
+      (mousedown)="(false)"
+      (mouseup)="(true)"
+    />
+    <img
+      *ngIf="listName === 'Done'"
+      class="archive-icon"
+      (click)="onArchiveTask()"
+      src="../../../assets/icons/archive.svg"
+      alt="archive-icon"
+      (mousedown)="(false)"
+      (mouseup)="(true)"
+    />
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<nav class="navbar">
+  <ul>
+    <li>
+      <a class="navbar-link navbar-brand" aria-disabled="true">Task Manager</a>
+    </li>
+    <li class="link">
+      <a class="navbar-link" routerLink="/dashboard">Dashboard</a>
+    </li>
+    <li class="link" *ngIf="!isAuthenticated">
+      <a class="navbar-link" routerLink="/auth">Sign Up</a>
+    </li>
+    <li class="link" *ngIf="isAuthenticated">
+      <a class="navbar-link" (click)="onLogout()">Logout</a>
+    </li>
+  </ul>
+</nav>

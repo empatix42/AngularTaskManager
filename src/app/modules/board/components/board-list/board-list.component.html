@@ -1,0 +1,42 @@
+<h2>{{ listName }}</h2>
+
+<div
+  class="container"
+  ngClass="{{ listColor }}"
+  (dragover)="$event.preventDefault()"
+  (drop)="dragDrop($event)"
+>
+  <select name="color" #color (change)="onSetColor(color.value)">
+    <option value="" selected disabled>Choose column color</option>
+    <option value="orange">Orange</option>
+    <option value="pink">Pink</option>
+    <option value="red">Red</option>
+    <option value="blue">Blue</option>
+    <option value="green">Green</option>
+  </select>
+  <button
+    class="btn-add"
+    type="button"
+    *ngIf="listName === 'Todo'"
+    (click)="addNewTask()"
+  >
+    +
+  </button>
+
+  <app-board-item
+    draggable="true"
+    *ngFor="
+      let task of tasks | filter: filterValue | sort: sortValue:sortOrder;
+      let i = index
+    "
+    [task]="task"
+    [board]="board"
+    [listName]="listName"
+    (dragstart)="dragStart($event, task)"
+    (dragend)="dragEnd($event)"
+  >
+  </app-board-item>
+  <button *ngIf="listName === 'Done'" routerLink="archive" class="btn-archive">
+    Move to Archive &#10142;
+  </button>
+</div>

@@ -1,0 +1,23 @@
+.container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px 100px;
+}
+button {
+  border: none;
+  padding: 20px;
+  width: 270px;
+  height: 260px;
+  cursor: pointer;
+  box-shadow: 0 0 5px rgb(43, 235, 43);
+  background-color: rgb(169, 248, 169);
+  font-size: large;
+  border-radius: 10px;
+  transition: 100ms ease-in-out;
+}
+button:hover {
+  background-color: lightgreen;
+  transform: scale(1.05);
+}
+

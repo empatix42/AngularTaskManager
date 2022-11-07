@@ -1,0 +1,22 @@
+<app-toolbar [title]="urlPath"></app-toolbar>
+
+<app-error-alert [errorMessage]="error" *ngIf="error"></app-error-alert>
+
+<div class="container">
+  <button
+    type="button"
+    (click)="isAuthenticated ? createBoard() : navigateToAuth()"
+  >
+    &#xFF0B;
+    <br />
+    Add New
+  </button>
+
+  <app-dashboard-card
+    *ngFor="
+      let board of boards | filter: filterValue | sort: sortValue:sortOrder
+    "
+    [board]="board"
+    [boards]="boards"
+  ></app-dashboard-card>
+</div>

@@ -1,0 +1,10 @@
+.archive-item {
+  height: 35px;
+  width: 200px;
+  border-radius: 10px;
+  padding: 10px;
+  background-color: lightgray;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}

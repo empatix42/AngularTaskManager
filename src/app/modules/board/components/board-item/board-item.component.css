@@ -1,0 +1,65 @@
+.task-item {
+  height: 55px;
+  border-radius: 10px;
+  padding: 15px;
+  cursor: pointer;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.task-text {
+  max-width: 80%;
+  overflow-wrap: break-word;
+}
+.task-icons {
+  display: flex;
+  gap: 10px;
+}
+.done-icon {
+  height: 30px;
+  transition: 100ms ease-in-out;
+}
+.archive-icon {
+  height: 22px;
+  transition: 100ms ease-in-out;
+}
+.edit-icon {
+  height: 18px;
+  transition: 100ms ease-in-out;
+  align-self: center;
+}
+.delete-icon {
+  height: 20px;
+  transition: 100ms ease-in-out;
+}
+img:hover {
+  cursor: pointer;
+  transform: scale(1.2);
+}
+
+form {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+input {
+  width: 85%;
+  border: 1px solid rgb(239, 239, 239);
+  border-radius: 5px;
+  height: 30px;
+  padding-left: 10px;
+}
+input:focus {
+  outline: none;
+}
+
+.btn-save {
+  width: 10%;
+  height: 30px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: transparent;
+  transition: 100ms ease-in-out;
+}

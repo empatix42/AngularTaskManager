@@ -1,0 +1,18 @@
+.container {
+  width: 100%;
+  margin-top: 50px;
+}
+
+.tasks {
+  padding: 50px;
+  height: 85vh;
+  margin: 0 auto;
+  width: 90%;
+  background-color: rgb(237, 237, 237);
+  box-shadow: 0 0 5px rgb(207, 207, 207);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  gap: 10px;
+}

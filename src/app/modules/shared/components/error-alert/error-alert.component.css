@@ -1,0 +1,12 @@
+.error {
+  margin: 0 auto;
+  max-width: 30vw;
+  border: 1px solid rgb(183, 50, 50);
+  box-shadow: 0 0 1px rgb(194, 76, 76);
+  border-radius: 5px;
+  background-color: rgb(247, 207, 207);
+  text-align: center;
+  padding: 20px 30px;
+  margin-bottom: 20px;
+}
+
