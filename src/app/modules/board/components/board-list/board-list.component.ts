@@ -1,11 +1,4 @@
-import {
-  ChangeDetectionStrategy,
-  Component,
-  Input,
-  OnDestroy,
-  OnInit,
-  Renderer2,
-} from '@angular/core';
+import { Component, Input, OnDestroy, OnInit, Renderer2 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Subscription } from 'rxjs';
 import { Board } from 'src/app/modules/shared/models/board.model';
@@ -18,7 +11,6 @@ import { BoardService } from '../../services/board.service';
   selector: 'app-board-list',
   templateUrl: './board-list.component.html',
   styleUrls: ['./board-list.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class BoardListComponent implements OnInit, OnDestroy {
   @Input() tasks!: Task[];
