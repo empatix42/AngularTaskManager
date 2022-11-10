@@ -5,7 +5,6 @@ import { Board } from 'src/app/modules/shared/models/board.model';
 import { Task } from 'src/app/modules/shared/models/task.model';
 import { DataStorageService } from 'src/app/modules/core/services/data-storage.service';
 import { ToolbarService } from 'src/app/modules/shared/services/toolbar.service';
-import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-board-list',
@@ -27,7 +26,6 @@ export class BoardListComponent implements OnInit, OnDestroy {
 
   constructor(
     private dataStorageService: DataStorageService,
-    private boardService: BoardService,
     private renderer: Renderer2,
     private toolbarService: ToolbarService
   ) {}
@@ -102,9 +100,8 @@ export class BoardListComponent implements OnInit, OnDestroy {
 
     this.dataStorageService.updateBoard(this.board, this.board.id!);
 
-    this.tasks = this.boardService.getTasksByStatus(
-      this.board.tasks!,
-      task.status
+    this.tasks = this.board.tasks!.filter(
+      (todo) => todo.status === task.status
     );
   }
 

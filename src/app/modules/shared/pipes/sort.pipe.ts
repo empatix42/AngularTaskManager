@@ -1,5 +1,4 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import { Board } from '../models/board.model';
 import { Task } from '../models/task.model';
 
 @Pipe({

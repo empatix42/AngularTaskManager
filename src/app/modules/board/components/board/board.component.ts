@@ -4,7 +4,6 @@ import { Subscription } from 'rxjs';
 import { Board } from '../../../shared/models/board.model';
 import { Task } from '../../../shared/models/task.model';
 import { DataStorageService } from '../../../core/services/data-storage.service';
-import { BoardService } from '../../services/board.service';
 
 @Component({
   selector: 'app-board',
@@ -25,8 +24,7 @@ export class BoardComponent implements OnInit, OnDestroy {
 
   constructor(
     private dataStorageService: DataStorageService,
-    private route: ActivatedRoute,
-    private boardService: BoardService
+    private route: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
@@ -46,17 +44,14 @@ export class BoardComponent implements OnInit, OnDestroy {
 
         if (!this.board.tasks) this.board.tasks = [];
 
-        this.newTasks = this.boardService.getTasksByStatus(
-          this.board.tasks,
-          'todo'
+        this.newTasks = this.board.tasks.filter(
+          (task) => task.status === 'todo'
         )!;
-        this.tasksInProgress = this.boardService.getTasksByStatus(
-          this.board.tasks,
-          'inProgress'
+        this.tasksInProgress = this.board.tasks.filter(
+          (task) => task.status === 'inProgress'
         )!;
-        this.tasksDone = this.boardService.getTasksByStatus(
-          this.board.tasks,
-          'done'
+        this.tasksDone = this.board.tasks.filter(
+          (task) => task.status === 'done'
         )!;
       },
     });
