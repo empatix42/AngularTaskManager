@@ -18,7 +18,7 @@
     class="btn-add"
     type="button"
     *ngIf="listName === 'Todo'"
-    (click)="addNewTask()"
+    (click)="!isCreationMode ? addNewTask() : null"
   >
     +
   </button>
@@ -34,6 +34,7 @@
     [listName]="listName"
     (dragstart)="dragStart($event, task)"
     (dragend)="dragEnd($event)"
+    (creationMode)="isCreationMode = $event"
   >
   </app-board-item>
   <button *ngIf="listName === 'Done'" routerLink="archive" class="btn-archive">

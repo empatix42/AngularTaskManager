@@ -2,8 +2,10 @@ import {
   ChangeDetectionStrategy,
   ChangeDetectorRef,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Board } from 'src/app/modules/shared/models/board.model';
@@ -24,6 +26,7 @@ export class DashboardCardComponent implements OnInit {
   todoAmount!: number;
   inProgressAmount!: number;
   doneAmount!: number;
+  @Output() creationMode = new EventEmitter<boolean>();
 
   constructor(
     private dataStorageService: DataStorageService,
@@ -61,6 +64,7 @@ export class DashboardCardComponent implements OnInit {
         },
       });
       this.dataStorageService.boards = this.boards;
+      this.creationMode.emit(false);
     }
   }
 

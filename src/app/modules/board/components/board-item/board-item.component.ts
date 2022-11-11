@@ -1,8 +1,10 @@
 import {
   ChangeDetectionStrategy,
   Component,
+  EventEmitter,
   Input,
   OnInit,
+  Output,
 } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Board } from 'src/app/modules/shared/models/board.model';
@@ -20,6 +22,7 @@ export class BoardItemComponent implements OnInit {
   @Input() board!: Board;
   @Input() tasks!: Task[];
   @Input() listName!: string;
+  @Output() creationMode = new EventEmitter<boolean>();
   taskForm!: FormGroup;
   editMode!: boolean;
 
@@ -40,6 +43,7 @@ export class BoardItemComponent implements OnInit {
       this.board.tasks = [this.task, ...this.board.tasks!];
       this.dataStorageService.updateBoard(this.board, this.board.id!);
       this.taskForm.reset();
+      this.creationMode.emit(false);
     }
   }
 

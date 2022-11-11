@@ -5,7 +5,9 @@
 <div class="container">
   <button
     type="button"
-    (click)="isAuthenticated ? createBoard() : navigateToAuth()"
+    (click)="
+      isAuthenticated && !isCreationMode ? createBoard() : navigateToAuth()
+    "
   >
     &#xFF0B;
     <br />
@@ -18,5 +20,6 @@
     "
     [board]="board"
     [boards]="boards"
+    (creationMode)="isCreationMode = $event"
   ></app-dashboard-card>
 </div>

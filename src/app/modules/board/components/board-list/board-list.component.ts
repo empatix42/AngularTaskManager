@@ -20,6 +20,7 @@ export class BoardListComponent implements OnInit, OnDestroy {
   sortOrder!: string;
   sortValue!: string;
   listColor: string = 'green';
+  isCreationMode!: boolean;
   private filterSub!: Subscription;
   private sortSub!: Subscription;
   private orderSub!: Subscription;
@@ -64,6 +65,7 @@ export class BoardListComponent implements OnInit, OnDestroy {
   }
   addNewTask() {
     this.tasks.unshift(new Task('', 'todo', new Date()));
+    this.isCreationMode = true;
   }
 
   dragStart(e: DragEvent, task: Task) {

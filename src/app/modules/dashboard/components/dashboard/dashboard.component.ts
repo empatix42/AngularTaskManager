@@ -20,6 +20,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   filterValue!: string;
   sortOrder!: string;
   sortValue!: string;
+  isCreationMode!: boolean;
   private boardsSub!: Subscription;
   private errorSub!: Subscription;
   private userSub!: Subscription;
@@ -71,6 +72,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   createBoard(): void {
     this.board = new Board('', '', new Date(), []);
     this.boards.unshift(this.board);
+    this.isCreationMode = true;
   }
 
   navigateToAuth(): void {
